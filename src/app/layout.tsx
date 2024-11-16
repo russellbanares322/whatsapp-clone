@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Whatsapp Clone",
+  title: "WhatsApp Clone",
   description: "Web application that mimics WhatsApp",
 };
 
