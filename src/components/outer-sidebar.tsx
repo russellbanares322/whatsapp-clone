@@ -1,7 +1,7 @@
 import React from "react";
 
 const OuterSidebar = () => {
-  return <div className="w-[40px]">OuterSidebar</div>;
+  return <div className="w-[40px]"></div>;
 };
 
 export default OuterSidebar;

@@ -1,7 +1,10 @@
 export default function Home() {
   return (
-    <div className="min-h-screen w-full font-[family-name:var(--font-geist-sans)]">
-      <h1 className="flex items-center justify-center min-h-screen">Content</h1>
+    <div className="min-h-screen w-full">
+      <div className="flex flex-col items-center gap-2 justify-center min-h-screen">
+        <p>WhatsApp Clone for Browser</p>
+        <p className="font-light text-[.9rem]">Send and receive message.</p>
+      </div>
     </div>
   );
 }
