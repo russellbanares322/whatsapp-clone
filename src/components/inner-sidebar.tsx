@@ -8,9 +8,9 @@ const InnerSidebar = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-[24px]">
           <p className="font-semibold text-xl">Chats</p>
-          <div className="flex items-center gap-4">
-            <IoCreateOutline size={20} />
-            <BsFilter className="pt-1" size={26} />
+          <div className="flex items-center gap-2">
+            <IoCreateOutline className="hover:bg-whitesmoke p-2 rounded-md" size={40} />
+            <BsFilter className="hover:bg-whitesmoke p-2 rounded-md" size={40} />
           </div>
         </div>
       </div>
