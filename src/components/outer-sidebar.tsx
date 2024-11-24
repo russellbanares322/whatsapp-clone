@@ -21,6 +21,10 @@ const OuterSidebar = () => {
     setSelectedTab(tab);
   };
 
+  const isTabSelected = (tab: SelectedTab) => {
+    return selectedTab === tab;
+  };
+
   return (
     <div className="w-[40px]">
       <div className="mt-[50px] ml-2">
