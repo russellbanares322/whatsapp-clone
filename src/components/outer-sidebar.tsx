@@ -3,7 +3,6 @@ import { BsChatText } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
 
 const OuterSidebar = () => {
-  // Implement sidebar functionality
   return (
     <div className="w-[40px]">
       <div className="mt-[50px] ml-2">
