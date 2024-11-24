@@ -4,6 +4,7 @@ import { IoMenuOutline } from "react-icons/io5";
 import { BsChatText } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 enum SelectedTab {
   Chats = "Chats",
@@ -35,14 +36,14 @@ const OuterSidebar = () => {
         <div className="mt-6 space-y-3">
           <BsChatText
             onClick={() => onSelectTab(SelectedTab.Chats)}
-            className="hover:bg-[#ededed] p-2 rounded-md"
+            className={twMerge("hover:bg-[#ededed] p-2 rounded-md")}
             size={33}
           />
           <button
             onClick={() => onSelectTab(SelectedTab.Calls)}
             className="hover:bg-[#ededed] rounded-md border-none outline-none cursor-default"
           >
-            <FiPhone className="rotate-12 p-2" size={33} />
+            <FiPhone className={twMerge("rotate-12 p-2")} size={33} />
           </button>
         </div>
       </div>
