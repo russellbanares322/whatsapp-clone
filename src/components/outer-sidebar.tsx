@@ -1,9 +1,26 @@
+"use client";
+
 import { IoMenuOutline } from "react-icons/io5";
 import { BsChatText } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
+import { useState } from "react";
+
+enum SelectedTab {
+  Chats = "Chats",
+  Calls = "Calls",
+  StarredMessages = "Starred Messages",
+  ArchivedChats = "Archived Chats",
+}
 
 const OuterSidebar = () => {
-  // Implement sidebar functionality
+  const [selectedTab, setSelectedTab] = useState<SelectedTab>(
+    SelectedTab.Chats
+  );
+
+  const onSelectTab = (tab: SelectedTab) => {
+    setSelectedTab(tab);
+  };
+
   return (
     <div className="w-[40px]">
       <div className="mt-[50px] ml-2">
@@ -12,10 +29,17 @@ const OuterSidebar = () => {
           size={35}
         />
         <div className="mt-6 space-y-3">
-          <BsChatText className="hover:bg-[#ededed] p-2 rounded-md" size={33} />
-          <div className="hover:bg-[#ededed] rounded-md ">
+          <BsChatText
+            onClick={() => onSelectTab(SelectedTab.Chats)}
+            className="hover:bg-[#ededed] p-2 rounded-md"
+            size={33}
+          />
+          <button
+            onClick={() => onSelectTab(SelectedTab.Calls)}
+            className="hover:bg-[#ededed] rounded-md border-none outline-none cursor-default"
+          >
             <FiPhone className="rotate-12 p-2" size={33} />
-          </div>
+          </button>
         </div>
       </div>
     </div>
