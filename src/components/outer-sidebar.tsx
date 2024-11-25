@@ -33,13 +33,13 @@ const OuterSidebar = () => {
           className="hover:bg-active-item p-3 rounded-md"
           size={42}
         />
-        <div className="mt-6 space-y-3">
+        <div className="mt-6">
           <button
             onClick={() => onSelectTab(SelectedTab.Chats)}
             className={twMerge(
               "hover:bg-active-item rounded-md border-none outline-none cursor-default",
               isTabSelected(SelectedTab.Chats) &&
-                "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-[''] motion-preset-slide-bottom"
+                "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-[''] before:motion-preset-shrink"
             )}
           >
             <BsChatText className="p-3" size={42} />
@@ -49,7 +49,7 @@ const OuterSidebar = () => {
             className={twMerge(
               "hover:bg-active-item rounded-md border-none outline-none cursor-default",
               isTabSelected(SelectedTab.Calls) &&
-                "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-['']"
+                "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-[''] before:motion-preset-shrink"
             )}
           >
             <FiPhone className="rotate-12 p-3" size={41} />
