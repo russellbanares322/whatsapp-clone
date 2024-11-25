@@ -27,23 +27,32 @@ const OuterSidebar = () => {
   };
 
   return (
-    <div className="w-[40px]">
-      <div className="mt-[50px] ml-2">
+    <div className="w-[35px]">
+      <div className="mt-[50px] ml-[5px]">
         <IoMenuOutline
-          className="hover:bg-[#ededed] p-2 rounded-md"
-          size={35}
+          className="hover:bg-active-item p-3 rounded-md"
+          size={42}
         />
         <div className="mt-6 space-y-3">
-          <BsChatText
+          <button
             onClick={() => onSelectTab(SelectedTab.Chats)}
-            className={twMerge("hover:bg-[#ededed] p-2 rounded-md")}
-            size={33}
-          />
+            className={twMerge(
+              "hover:bg-active-item rounded-md border-none outline-none cursor-default",
+              isTabSelected(SelectedTab.Chats) &&
+                "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-[''] motion-preset-slide-bottom"
+            )}
+          >
+            <BsChatText className="p-3" size={42} />
+          </button>
           <button
             onClick={() => onSelectTab(SelectedTab.Calls)}
-            className="hover:bg-[#ededed] rounded-md border-none outline-none cursor-default"
+            className={twMerge(
+              "hover:bg-active-item rounded-md border-none outline-none cursor-default",
+              isTabSelected(SelectedTab.Calls) &&
+                "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-['']"
+            )}
           >
-            <FiPhone className={twMerge("rotate-12 p-2")} size={33} />
+            <FiPhone className="rotate-12 p-3" size={41} />
           </button>
         </div>
       </div>
