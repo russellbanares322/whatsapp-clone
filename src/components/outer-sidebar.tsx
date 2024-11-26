@@ -17,6 +17,7 @@ enum SelectedTab {
 }
 
 const OuterSidebar = () => {
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [selectedTab, setSelectedTab] = useState<SelectedTab>(
     SelectedTab.Chats
   );
@@ -44,12 +45,17 @@ const OuterSidebar = () => {
     );
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarExpanded((prev) => !prev);
+  };
+
   return (
     <div className="w-[35px] relative">
       <div className="mt-[50px] ml-[5px]">
         <IoMenuOutline
           className="hover:bg-active-item p-3 rounded-md"
           size={42}
+          onClick={toggleSidebar}
         />
         <div className="mt-6">
           {buttonIcon(
@@ -77,6 +83,7 @@ const OuterSidebar = () => {
           />
         </div>
       </div>
+      {/* Expanded Sidebar */}
     </div>
   );
 };
