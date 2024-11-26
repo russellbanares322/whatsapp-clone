@@ -46,17 +46,32 @@ const OuterSidebar = () => {
   };
 
   const toggleSidebar = () => {
-    setIsSidebarExpanded((prev) => !prev);
+    setIsSidebarExpanded(!isSidebarExpanded);
+    document.getElementById("menu")?.classList.add("motion-preset-stretch");
+
+    const animationTimeout = setTimeout(() => {
+      document
+        .getElementById("menu")
+        ?.classList.remove("motion-preset-stretch");
+    }, 400);
+
+    return () => clearTimeout(animationTimeout);
   };
 
   return (
     <div className="w-[35px] relative">
       <div className="mt-[50px] ml-[5px]">
-        <IoMenuOutline
-          className="hover:bg-active-item p-3 rounded-md"
-          size={42}
+        <button
           onClick={toggleSidebar}
-        />
+          className="hover:bg-active-item rounded-md border-none outline-none cursor-default"
+        >
+          <IoMenuOutline
+            id="menu"
+            className="p-3"
+            size={44}
+            onClick={toggleSidebar}
+          />
+        </button>
         <div className="mt-6">
           {buttonIcon(
             SelectedTab.Chats,
@@ -84,6 +99,26 @@ const OuterSidebar = () => {
         </div>
       </div>
       {/* Expanded Sidebar */}
+      <div
+        className={twMerge(
+          "fixed left-0 top-0 duration-150 ease-in-out w-[230px] p-2 shadow-lg border-r border-0 border-solid bg-whitesmoke h-full",
+          isSidebarExpanded ? "-translate-x-60" : "translate-x-0"
+        )}
+      >
+        <div className="mt-[50px]">
+          <button
+            onClick={toggleSidebar}
+            className="hover:bg-active-item rounded-md border-none outline-none cursor-default"
+          >
+            <IoMenuOutline
+              id="menu"
+              className="p-3"
+              size={44}
+              onClick={toggleSidebar}
+            />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
