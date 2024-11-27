@@ -65,12 +65,7 @@ const OuterSidebar = () => {
           onClick={toggleSidebar}
           className="hover:bg-active-item rounded-md border-none outline-none cursor-default"
         >
-          <IoMenuOutline
-            id="menu"
-            className="p-3"
-            size={44}
-            onClick={toggleSidebar}
-          />
+          <IoMenuOutline id="menu" className="p-3" size={44} />
         </button>
         <div className="mt-6">
           {buttonIcon(
@@ -102,7 +97,7 @@ const OuterSidebar = () => {
       <div
         className={twMerge(
           "fixed left-0 top-0 duration-150 ease-in-out w-[230px] p-2 shadow-lg border-r border-0 border-solid bg-whitesmoke h-full",
-          isSidebarExpanded ? "-translate-x-60" : "translate-x-0"
+          isSidebarExpanded ? "translate-x-0" : "-translate-x-60"
         )}
       >
         <div className="mt-[50px]">
@@ -110,12 +105,7 @@ const OuterSidebar = () => {
             onClick={toggleSidebar}
             className="hover:bg-active-item rounded-md border-none outline-none cursor-default"
           >
-            <IoMenuOutline
-              id="menu"
-              className="p-3"
-              size={44}
-              onClick={toggleSidebar}
-            />
+            <IoMenuOutline id="menu" className="p-3" size={44} />
           </button>
         </div>
       </div>
