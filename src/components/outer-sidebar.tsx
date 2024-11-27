@@ -123,7 +123,7 @@ const OuterSidebar = () => {
               </div>
             )}
           </div>
-          <div className="absolute flex flex-col bottom-11">
+          <div className="absolute w-full flex flex-col gap-1 bottom-8">
             {buttonIcon(
               SelectedTab.StarredMessages,
               <MdOutlineStarBorder className="p-3" size={44} />
@@ -132,7 +132,7 @@ const OuterSidebar = () => {
               SelectedTab.ArchivedChats,
               <HiOutlineArchiveBox className="p-3" size={42} />
             )}
-            <hr className="mt-1 mb-2 w-[222px]" />
+            <hr className="my-1 mr-5" />
             <LiaCogSolid
               className="hover:bg-active-item p-3 rounded-md"
               size={43}
