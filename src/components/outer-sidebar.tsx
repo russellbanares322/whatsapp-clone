@@ -110,11 +110,17 @@ const OuterSidebar = () => {
           <div className="flex flex-col items-start gap-3 justify-start mt-6">
             {buttonIcon(
               SelectedTab.Chats,
-              <BsChatText className="p-3" size={42} />
+              <div className="flex items-center gap-2">
+                <BsChatText className="p-3" size={42} />
+                <p>{SelectedTab.Chats}</p>
+              </div>
             )}
             {buttonIcon(
               SelectedTab.Calls,
-              <FiPhone className="rotate-12 p-3" size={41} />
+              <div className="flex items-center gap-2">
+                <FiPhone className="rotate-12 p-3" size={41} />
+                <p>{SelectedTab.Calls}</p>
+              </div>
             )}
           </div>
           <div className="absolute flex flex-col bottom-11">
