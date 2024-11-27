@@ -107,6 +107,31 @@ const OuterSidebar = () => {
           >
             <IoMenuOutline id="menu" className="p-3" size={44} />
           </button>
+          <div className="flex flex-col items-start gap-3 justify-start mt-6">
+            {buttonIcon(
+              SelectedTab.Chats,
+              <BsChatText className="p-3" size={42} />
+            )}
+            {buttonIcon(
+              SelectedTab.Calls,
+              <FiPhone className="rotate-12 p-3" size={41} />
+            )}
+          </div>
+          <div className="absolute flex flex-col bottom-11">
+            {buttonIcon(
+              SelectedTab.StarredMessages,
+              <MdOutlineStarBorder className="p-3" size={44} />
+            )}
+            {buttonIcon(
+              SelectedTab.ArchivedChats,
+              <HiOutlineArchiveBox className="p-3" size={42} />
+            )}
+            <hr className="mt-1 mb-2 w-[222px]" />
+            <LiaCogSolid
+              className="hover:bg-active-item p-3 rounded-md"
+              size={43}
+            />
+          </div>
         </div>
       </div>
     </div>
