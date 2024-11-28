@@ -12,8 +12,8 @@ import { LiaCogSolid } from "react-icons/lia";
 enum SelectedTab {
   Chats = "Chats",
   Calls = "Calls",
-  StarredMessages = "Starred Messages",
-  ArchivedChats = "Archived Chats",
+  StarredMessages = "Starred messages",
+  ArchivedChats = "Archived chats",
 }
 
 const OuterSidebar = () => {
@@ -37,7 +37,8 @@ const OuterSidebar = () => {
         className={twMerge(
           "hover:bg-active-item rounded-md border-none outline-none cursor-default",
           isTabSelected(tab) &&
-            "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-[''] before:motion-preset-shrink"
+            "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-[''] before:motion-preset-shrink",
+          isSidebarExpanded ? "w-full" : "w-auto"
         )}
       >
         {icon}
@@ -60,14 +61,14 @@ const OuterSidebar = () => {
 
   return (
     <div className="w-[35px] relative">
-      <div className="mt-[50px] ml-[5px]">
+      <div className="mt-[40px] ml-[5px]">
         <button
           onClick={toggleSidebar}
           className="hover:bg-active-item rounded-md border-none outline-none cursor-default"
         >
           <IoMenuOutline id="menu" className="p-3" size={44} />
         </button>
-        <div className="mt-6">
+        <div>
           {buttonIcon(
             SelectedTab.Chats,
             <BsChatText className="p-3" size={42} />
@@ -100,37 +101,43 @@ const OuterSidebar = () => {
           isSidebarExpanded ? "translate-x-0" : "-translate-x-60"
         )}
       >
-        <div className="mt-[50px]">
+        <div className="mt-[30px]">
           <button
             onClick={toggleSidebar}
             className="hover:bg-active-item rounded-md border-none outline-none cursor-default"
           >
             <IoMenuOutline id="menu" className="p-3" size={44} />
           </button>
-          <div className="flex flex-col items-start gap-3 justify-start mt-6">
+          <div className="flex flex-col items-start gap-3 justify-start">
             {buttonIcon(
               SelectedTab.Chats,
               <div className="flex items-center gap-2">
                 <BsChatText className="p-3" size={42} />
-                <p>{SelectedTab.Chats}</p>
+                <p className="text-sm">{SelectedTab.Chats}</p>
               </div>
             )}
             {buttonIcon(
               SelectedTab.Calls,
               <div className="flex items-center gap-2">
                 <FiPhone className="rotate-12 p-3" size={41} />
-                <p>{SelectedTab.Calls}</p>
+                <p className="text-sm">{SelectedTab.Calls}</p>
               </div>
             )}
           </div>
           <div className="absolute w-full flex flex-col gap-1 bottom-8">
             {buttonIcon(
               SelectedTab.StarredMessages,
-              <MdOutlineStarBorder className="p-3" size={44} />
+              <div className="flex items-center gap-2">
+                <MdOutlineStarBorder className="p-3" size={44} />
+                <p className="text-sm">{SelectedTab.StarredMessages}</p>
+              </div>
             )}
             {buttonIcon(
               SelectedTab.ArchivedChats,
-              <HiOutlineArchiveBox className="p-3" size={42} />
+              <div className="flex items-center gap-2">
+                <HiOutlineArchiveBox className="p-3" size={42} />
+                <p className="text-sm">{SelectedTab.ArchivedChats}</p>
+              </div>
             )}
             <hr className="my-1 mr-5" />
             <LiaCogSolid
