@@ -101,30 +101,32 @@ const OuterSidebar = () => {
           isSidebarExpanded ? "translate-x-0" : "-translate-x-60"
         )}
       >
-        <div className="mt-[30px]">
-          <button
-            onClick={toggleSidebar}
-            className="hover:bg-active-item rounded-md border-none outline-none cursor-default"
-          >
-            <IoMenuOutline id="menu" className="p-3" size={44} />
-          </button>
-          <div className="flex flex-col items-start gap-3 justify-start">
-            {buttonIcon(
-              SelectedTab.Chats,
-              <div className="flex items-center gap-2">
-                <BsChatText className="p-3" size={42} />
-                <p className="text-sm">{SelectedTab.Chats}</p>
-              </div>
-            )}
-            {buttonIcon(
-              SelectedTab.Calls,
-              <div className="flex items-center gap-2">
-                <FiPhone className="rotate-12 p-3" size={41} />
-                <p className="text-sm">{SelectedTab.Calls}</p>
-              </div>
-            )}
+        <div className="mt-[30px] flex flex-col justify-between h-full">
+          <div>
+            <button
+              onClick={toggleSidebar}
+              className="hover:bg-active-item rounded-md border-none outline-none cursor-default"
+            >
+              <IoMenuOutline id="menu" className="p-3" size={44} />
+            </button>
+            <div className="flex flex-col items-start gap-3 justify-start">
+              {buttonIcon(
+                SelectedTab.Chats,
+                <div className="flex items-center gap-2">
+                  <BsChatText className="p-3" size={42} />
+                  <p className="text-sm">{SelectedTab.Chats}</p>
+                </div>
+              )}
+              {buttonIcon(
+                SelectedTab.Calls,
+                <div className="flex items-center gap-2">
+                  <FiPhone className="rotate-12 p-3" size={41} />
+                  <p className="text-sm">{SelectedTab.Calls}</p>
+                </div>
+              )}
+            </div>
           </div>
-          <div className="absolute w-full flex flex-col gap-1 bottom-8">
+          <div className="w-full flex flex-col gap-3 mb-10">
             {buttonIcon(
               SelectedTab.StarredMessages,
               <div className="flex items-center gap-2">
@@ -139,7 +141,7 @@ const OuterSidebar = () => {
                 <p className="text-sm">{SelectedTab.ArchivedChats}</p>
               </div>
             )}
-            <hr className="my-1 mr-5" />
+            <hr className="mt-1" />
             <LiaCogSolid
               className="hover:bg-active-item p-3 rounded-md"
               size={43}
