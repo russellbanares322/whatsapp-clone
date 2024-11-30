@@ -1,5 +1,6 @@
 import React from "react";
+import Home from "../page";
 
 export default function Page() {
-  return <div className="w-full">Page</div>;
+  return <Home />;
 }
