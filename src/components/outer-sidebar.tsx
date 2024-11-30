@@ -8,8 +8,10 @@ import { twMerge } from "tailwind-merge";
 import { MdOutlineStarBorder } from "react-icons/md";
 import { HiOutlineArchiveBox } from "react-icons/hi2";
 import { LiaCogSolid } from "react-icons/lia";
+import Link from "next/link";
+import { selectedRoutePath } from "@/constants/routePaths";
 
-enum SelectedTab {
+export enum SelectedTab {
   Chats = "Chats",
   Calls = "Calls",
   StarredMessages = "Starred messages",
@@ -24,6 +26,7 @@ const OuterSidebar = () => {
 
   const onSelectTab = (tab: SelectedTab) => {
     setSelectedTab(tab);
+    setIsSidebarExpanded(false);
   };
 
   const isTabSelected = (tab: SelectedTab) => {
@@ -32,17 +35,19 @@ const OuterSidebar = () => {
 
   const buttonIcon = (tab: SelectedTab, icon: React.ReactNode) => {
     return (
-      <button
-        onClick={() => onSelectTab(tab)}
-        className={twMerge(
-          "hover:bg-active-item rounded-md border-none outline-none cursor-default",
-          isTabSelected(tab) &&
-            "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-[''] before:motion-preset-shrink",
-          isSidebarExpanded ? "w-full" : "w-auto"
-        )}
-      >
-        {icon}
-      </button>
+      <Link className="w-full" href={selectedRoutePath(tab)}>
+        <button
+          onClick={() => onSelectTab(tab)}
+          className={twMerge(
+            "hover:bg-active-item rounded-md border-none outline-none cursor-default",
+            isTabSelected(tab) &&
+              "bg-active-item relative before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:h-[16px] before:w-[3px] before:rounded-lg before:bg-green before:content-[''] before:motion-preset-shrink",
+            isSidebarExpanded ? "w-full" : "w-auto"
+          )}
+        >
+          {icon}
+        </button>
+      </Link>
     );
   };
 
