@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Starred Messages</div>;
+  return <div className="min-h-screen w-full">Starred Messages</div>;
 }

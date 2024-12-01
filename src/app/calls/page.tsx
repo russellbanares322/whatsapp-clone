@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Calls</div>;
+  return <div className="min-h-screen w-full">Calls</div>;
 }
