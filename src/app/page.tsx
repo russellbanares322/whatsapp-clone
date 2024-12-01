@@ -1,6 +1,16 @@
+"use client";
+
+import { routePaths } from "@/constants/routePaths";
+import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      window.location.replace(routePaths.Chats);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen w-full">
       <div className="flex flex-col items-center gap-2 justify-center min-h-screen">

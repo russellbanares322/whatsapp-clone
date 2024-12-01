@@ -1,6 +1,6 @@
 import { SelectedTab } from "@/components/outer-sidebar";
 
- const routePaths: Record<SelectedTab, string> = {
+ export const routePaths: Record<SelectedTab, string> = {
     Chats: "/chats",
     "Calls" : "/calls",
     "Starred messages": "/starred-messages",
