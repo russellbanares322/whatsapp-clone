@@ -1,6 +1,7 @@
 import { IoCreateOutline } from "react-icons/io5";
 import { BsFilter } from "react-icons/bs";
 import SearchInput from "./search-input";
+import ChatCard from "./chat-card";
 
 const InnerSidebar = () => {
   return (
@@ -22,6 +23,8 @@ const InnerSidebar = () => {
         </div>
         {/* Search Input */}
         <SearchInput />
+        {/* Chat Data */}
+        <ChatCard />
       </div>
     </div>
   );
