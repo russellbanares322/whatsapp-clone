@@ -6,7 +6,7 @@ import ChatCard from "./chat-card";
 const InnerSidebar = () => {
   return (
     <div className="border-r border-0 border-solid w-[268px]">
-      <div className="max-h-[887px] overflow-auto px-[18px] py-[27px]">
+      <div className="max-h-[887px] overflow-auto px-[10px] py-[27px]">
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
           <p className="font-semibold text-xl">Chats</p>

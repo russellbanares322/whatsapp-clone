@@ -23,11 +23,21 @@ const dummyChatData = [
 
 const ChatCard = () => {
   return (
-    <div className="flex flex-col gap-1 mt-5">
+    <div className="flex flex-col gap-1 mt-3 w-full">
       {dummyChatData.map((chat) => (
-        <div key={chat.name}>
+        <div
+          className="hover:bg-whitesmoke cursor-default p-3 rounded-md"
+          key={chat.name}
+        >
           <div className="flex items-center justify-between">
-            <p className="text-base font-semibold">{chat.name}</p>
+            <div className="inline-flex items-center gap-2">
+              <img
+                className="h-11 w-11 rounded-full object-cover"
+                alt="Sample profile picture"
+                src="https://fastly.picsum.photos/id/5/5000/3334.jpg?hmac=R_jZuyT1jbcfBlpKFxAb0Q3lof9oJ0kREaxsYV3MgCc"
+              />
+              <p className="text-base font-semibold">{chat.name}</p>
+            </div>
             <p className="text-xs">{chat.date || chat.time}</p>
           </div>
         </div>
