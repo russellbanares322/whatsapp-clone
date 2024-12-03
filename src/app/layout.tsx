@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ContentWrapper from "@/components/content-wrapper";
 import { Roboto } from "next/font/google";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
-        <ContentWrapper>{children}</ContentWrapper>
+        <ConvexClientProvider>
+          <ContentWrapper>{children}</ContentWrapper>
+        </ConvexClientProvider>
       </body>
     </html>
   );
