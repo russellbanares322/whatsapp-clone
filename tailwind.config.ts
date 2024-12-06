@@ -15,7 +15,7 @@ export default {
         "lime-green": "#d9fdd3",
         "black": "#1b1b1b",
         "active-item": "#e5e5e5",
-        green : "#1a8353"
+        green : "#1a8353",
       },
     },
   },
