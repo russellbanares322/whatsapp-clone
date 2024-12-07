@@ -11,7 +11,7 @@ const dummyChatData = [
     name: "Ed",
     date: null,
     time: "10:24 PM",
-    message: "Testing long message again last",
+    message: "Testing long message again last test",
   },
   {
     name: "Rod",
@@ -23,7 +23,7 @@ const dummyChatData = [
     name: "Latina",
     date: "3/20/2021",
     time: null,
-    message: "Have a blessed sunday!",
+    message: "Have a blessed sunday test!",
   },
 ];
 
