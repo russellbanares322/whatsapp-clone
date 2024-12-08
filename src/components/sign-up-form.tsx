@@ -10,7 +10,7 @@ const SignUpForm = () => {
         <div className="bg-whitesmoke h-screen" />
       </div>
       {/* Signup Form */}
-      <div className="absolute mx-auto top-40 bottom-0 right-0 left-0 bg-white max-w-[900px] max-h-96 rounded-sm p-10">
+      <div className="absolute mx-auto top-40 bottom-0 right-0 left-0 bg-white max-w-[900px] max-h-96 rounded-md p-10">
         SignUpForm
       </div>
     </div>
