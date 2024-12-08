@@ -1,11 +1,14 @@
 import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const SignUpForm = () => {
   return (
     <div className="h-full w-full min-h-screen relative">
       <div className="grid grid-row-2">
         <div className="bg-green min-h-52">
-          <p className="text-white">WhatsApp</p>
+          <p className="text-white pl-10 pt-6 inline-flex items-center gap-3">
+            <FaWhatsapp className="text-gray-300" size={35} /> WHATSAPP
+          </p>
         </div>
         <div className="bg-whitesmoke h-screen" />
       </div>
