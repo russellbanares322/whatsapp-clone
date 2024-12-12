@@ -1,3 +1,4 @@
+import { SignInButton } from "@clerk/nextjs";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -15,10 +16,12 @@ const SignUpForm = () => {
       </div>
       {/* Signup Form */}
       <div className="absolute flex items-center w-full justify-center mx-auto top-40 bottom-0 right-0 left-0 bg-white max-w-[900px] max-h-96 rounded-md px-10">
-        <button className="inline-flex items-center px-2 py-1 gap-2 rounded-md outline-none border-none bg-green text-white">
-          <FcGoogle className="bg-white rounded-full" size={30} />
-          Log-In using Google
-        </button>
+        <SignInButton mode="modal">
+          <button className="inline-flex items-center px-2 py-1 gap-2 rounded-md outline-none border-none bg-green text-white">
+            <FcGoogle className="bg-white rounded-full" size={30} />
+            Log-In using Google
+          </button>
+        </SignInButton>
       </div>
     </div>
   );

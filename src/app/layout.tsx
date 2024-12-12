@@ -3,7 +3,7 @@ import "./globals.css";
 import ContentWrapper from "@/components/content-wrapper";
 import { Roboto } from "next/font/google";
 import { ConvexClientProvider } from "./ConvexClientProvider";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
 import SignUpForm from "@/components/sign-up-form";
 
 const roboto = Roboto({
@@ -27,14 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
-        <ConvexClientProvider>
-          <Authenticated>
-            <ContentWrapper>{children}</ContentWrapper>
-          </Authenticated>
-          <UnAuthenticated>
-            <SignUpForm />
-          </UnAuthenticated>
-        </ConvexClientProvider>
+        <ClerkProvider>
+          <ConvexClientProvider>
+            <Authenticated>
+              <ContentWrapper>{children}</ContentWrapper>
+            </Authenticated>
+            <UnAuthenticated>
+              <SignUpForm />
+            </UnAuthenticated>
+          </ConvexClientProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
