@@ -10,6 +10,7 @@ import { HiOutlineArchiveBox } from "react-icons/hi2";
 import { LiaCogSolid } from "react-icons/lia";
 import Link from "next/link";
 import { selectedRoutePath } from "@/constants/routePaths";
+import { UserButton } from "@clerk/nextjs";
 
 export enum SelectedTab {
   Chats = "Chats",
@@ -19,7 +20,7 @@ export enum SelectedTab {
 }
 
 const OuterSidebar = () => {
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
   const [selectedTab, setSelectedTab] = useState<SelectedTab>(
     SelectedTab.Chats
   );
@@ -97,6 +98,9 @@ const OuterSidebar = () => {
             className="hover:bg-active-item p-3 rounded-md"
             size={43}
           />
+          <div className="ml-2 mt-1">
+            <UserButton />
+          </div>
         </div>
       </div>
       {/* Expanded Sidebar */}
@@ -114,7 +118,7 @@ const OuterSidebar = () => {
             >
               <IoMenuOutline id="menu" className="p-3" size={44} />
             </button>
-            <div className="flex flex-col items-start gap-3 justify-start">
+            <div className="flex flex-col items-start gap-1 justify-start">
               {buttonIcon(
                 SelectedTab.Chats,
                 <div className="flex items-center gap-2">
@@ -131,7 +135,7 @@ const OuterSidebar = () => {
               )}
             </div>
           </div>
-          <div className="w-full flex flex-col gap-3 mb-10">
+          <div className="w-full flex flex-col gap-1 mb-14">
             {buttonIcon(
               SelectedTab.StarredMessages,
               <div className="flex items-center gap-2">
@@ -146,11 +150,27 @@ const OuterSidebar = () => {
                 <p className="text-sm">{SelectedTab.ArchivedChats}</p>
               </div>
             )}
-            <hr className="mt-1" />
-            <LiaCogSolid
-              className="hover:bg-active-item p-3 rounded-md"
-              size={43}
-            />
+            <hr />
+            <button
+              className={twMerge(
+                "hover:bg-active-item rounded-md border-none outline-none cursor-default"
+              )}
+            >
+              <div className="flex items-center gap-2">
+                <LiaCogSolid className="p-3 rounded-md" size={43} />
+                <p className="text-sm"> Settings</p>
+              </div>
+            </button>
+            <button
+              className={twMerge(
+                "hover:bg-active-item ml-1 py-2 pl-2 rounded-md border-none outline-none cursor-default"
+              )}
+            >
+              <div className="flex items-center gap-3">
+                <UserButton />
+                <p className="text-sm"> Profile</p>
+              </div>
+            </button>
           </div>
         </div>
       </div>
