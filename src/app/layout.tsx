@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ContentWrapper from "@/components/content-wrapper";
 import { Roboto } from "next/font/google";
-import { ConvexClientProvider } from "./ConvexClientProvider";
-import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import SignUpForm from "@/components/sign-up-form";
+import Providers from "./providers";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -27,16 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
-        <ClerkProvider>
-          <ConvexClientProvider>
-            <Authenticated>
-              <ContentWrapper>{children}</ContentWrapper>
-            </Authenticated>
-            <UnAuthenticated>
-              <SignUpForm />
-            </UnAuthenticated>
-          </ConvexClientProvider>
-        </ClerkProvider>
+        <Providers>
+          <Authenticated>
+            <ContentWrapper>{children}</ContentWrapper>
+          </Authenticated>
+          <UnAuthenticated>
+            <SignUpForm />
+          </UnAuthenticated>
+        </Providers>
       </body>
     </html>
   );
