@@ -1,5 +1,6 @@
 import { IoCreateOutline } from "react-icons/io5";
 import { BsFilter } from "react-icons/bs";
+import { GoPersonAdd } from "react-icons/go";
 import SearchInput from "./search-input";
 import ChatCard from "./chat-card";
 
@@ -10,14 +11,21 @@ const InnerSidebar = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
           <p className="font-semibold text-xl">Chats</p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            <GoPersonAdd
+              className="hover:bg-whitesmoke p-2 rounded-md"
+              size={34}
+              title="Add person to chat"
+            />
             <IoCreateOutline
               className="hover:bg-whitesmoke p-2 rounded-md"
-              size={40}
+              size={34}
+              title="Start new chat"
             />
             <BsFilter
               className="hover:bg-whitesmoke p-2 rounded-md"
-              size={40}
+              size={34}
+              title="Filter chats by"
             />
           </div>
         </div>
