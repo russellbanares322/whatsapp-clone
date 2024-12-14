@@ -20,7 +20,7 @@ export enum SelectedTab {
 }
 
 const OuterSidebar = () => {
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [selectedTab, setSelectedTab] = useState<SelectedTab>(
     SelectedTab.Chats
   );
