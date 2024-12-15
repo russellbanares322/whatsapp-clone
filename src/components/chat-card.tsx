@@ -27,6 +27,7 @@ const dummyChatData = [
   },
 ];
 
+// Fetch real chat data
 const ChatCard = () => {
   return (
     <div className="flex flex-col gap-1 mt-3 w-full">
