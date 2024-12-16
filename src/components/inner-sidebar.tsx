@@ -8,8 +8,25 @@ import ChatCard from "./chat-card";
 import DropdownMenu from "./dropdown-menu";
 import { useState } from "react";
 
+type MenuOptions = {
+  openAddPersonMenu: boolean;
+  openStartNewChatMenu: boolean;
+  openFilterMenu: boolean;
+};
+
 const InnerSidebar = () => {
-  const [openAddPersonMenu, setOpenAddPersonMenu] = useState(false);
+  const [menuOptions, setMenuOptions] = useState<MenuOptions>({
+    openAddPersonMenu: false,
+    openStartNewChatMenu: false,
+    openFilterMenu: false,
+  });
+
+  const onOpenMenu = (selectedMenu: keyof MenuOptions) => {
+    setMenuOptions((prev) => ({
+      ...prev,
+      [selectedMenu]: !menuOptions[selectedMenu],
+    }));
+  };
 
   return (
     <div className="border-r border-0 border-solid w-[268px]">
@@ -19,15 +36,15 @@ const InnerSidebar = () => {
           <p className="font-semibold text-xl">Chats</p>
           <div className="flex items-center gap-1">
             <DropdownMenu
-              open={openAddPersonMenu}
-              onOpenChange={setOpenAddPersonMenu}
-              content={<div>Content</div>}
+              open={menuOptions.openAddPersonMenu}
+              onOpenChange={() => onOpenMenu("openAddPersonMenu")}
+              content={<div>Add Person</div>}
             >
               <GoPersonAdd
                 className="hover:bg-whitesmoke p-2 rounded-md"
                 size={34}
                 title="Add person to chat"
-                onClick={() => setOpenAddPersonMenu(!openAddPersonMenu)}
+                onClick={() => onOpenMenu("openAddPersonMenu")}
               />
             </DropdownMenu>
             <IoCreateOutline
