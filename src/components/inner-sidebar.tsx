@@ -9,22 +9,22 @@ import DropdownMenu from "./dropdown-menu";
 import { useState } from "react";
 
 type MenuOptions = {
-  openAddPersonMenu: boolean;
-  openStartNewChatMenu: boolean;
-  openFilterMenu: boolean;
+  openAddUser: boolean;
+  openStartNewChat: boolean;
+  openFilter: boolean;
 };
 
 const InnerSidebar = () => {
   const [menuOptions, setMenuOptions] = useState<MenuOptions>({
-    openAddPersonMenu: false,
-    openStartNewChatMenu: false,
-    openFilterMenu: false,
+    openAddUser: false,
+    openStartNewChat: false,
+    openFilter: false,
   });
 
   const onOpenMenu = (selectedMenu: keyof MenuOptions) => {
     setMenuOptions((prev) => ({
       ...prev,
-      [selectedMenu]: !menuOptions[selectedMenu],
+      [selectedMenu]: !prev[selectedMenu],
     }));
   };
 
@@ -35,28 +35,43 @@ const InnerSidebar = () => {
         <div className="flex justify-between items-center mb-4">
           <p className="font-semibold text-xl">Chats</p>
           <div className="flex items-center gap-1">
+            {/* Add User */}
             <DropdownMenu
-              open={menuOptions.openAddPersonMenu}
-              onOpenChange={() => onOpenMenu("openAddPersonMenu")}
+              open={menuOptions.openAddUser}
+              onOpenChange={() => onOpenMenu("openAddUser")}
               content={<div>Add Person</div>}
             >
               <GoPersonAdd
                 className="hover:bg-whitesmoke p-2 rounded-md"
                 size={34}
                 title="Add person to chat"
-                onClick={() => onOpenMenu("openAddPersonMenu")}
+                onClick={() => onOpenMenu("openAddUser")}
               />
             </DropdownMenu>
-            <IoCreateOutline
-              className="hover:bg-whitesmoke p-2 rounded-md"
-              size={34}
-              title="Start new chat"
-            />
-            <BsFilter
-              className="hover:bg-whitesmoke p-2 rounded-md"
-              size={34}
-              title="Filter chats by"
-            />
+            <DropdownMenu
+              open={menuOptions.openStartNewChat}
+              onOpenChange={() => onOpenMenu("openStartNewChat")}
+              content={<div>Start New Chat</div>}
+            >
+              <IoCreateOutline
+                className="hover:bg-whitesmoke p-2 rounded-md"
+                size={34}
+                title="Start new chat"
+                onClick={() => onOpenMenu("openStartNewChat")}
+              />
+            </DropdownMenu>
+            <DropdownMenu
+              open={menuOptions.openFilter}
+              onOpenChange={() => onOpenMenu("openFilter")}
+              content={<div>Filter Options</div>}
+            >
+              <BsFilter
+                className="hover:bg-whitesmoke p-2 rounded-md"
+                size={34}
+                title="Filter chats by"
+                onClick={() => onOpenMenu("openFilter")}
+              />
+            </DropdownMenu>
           </div>
         </div>
         {/* Search Input */}

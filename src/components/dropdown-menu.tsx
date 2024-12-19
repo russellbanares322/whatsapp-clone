@@ -6,7 +6,7 @@ type DropdownMenuProps = {
   children: React.ReactNode;
   content: React.ReactNode;
   open: boolean;
-  onOpenChange: Dispatch<SetStateAction<boolean>>;
+  onOpenChange: Dispatch<SetStateAction<boolean>> | (() => void);
 };
 
 const DropdownMenu = ({ children, content, open }: DropdownMenuProps) => {
@@ -17,7 +17,7 @@ const DropdownMenu = ({ children, content, open }: DropdownMenuProps) => {
         <motion.div
           animate={{ y: 3, animationDelay: "10" }}
           exit={{ opacity: 0 }}
-          className={twMerge("absolute bg-white shadow-lg p-2 rounded-md")}
+          className={twMerge("absolute bg-whitesmoke shadow-lg p-2 rounded-md")}
         >
           {content}
         </motion.div>
