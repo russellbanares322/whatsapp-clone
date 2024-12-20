@@ -22,9 +22,10 @@ const InnerSidebar = () => {
   });
 
   const onOpenMenu = (selectedMenu: keyof MenuOptions) => {
+    // Implement closing of menu that is not selected
     setMenuOptions((prev) => ({
       ...prev,
-      [selectedMenu]: !prev[selectedMenu],
+      [selectedMenu]: prev[selectedMenu],
     }));
   };
 
