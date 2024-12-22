@@ -22,6 +22,7 @@ const InnerSidebar = () => {
   });
 
   const onOpenMenu = (selectedMenu: keyof MenuOptions) => {
+    // Implement toggling of currently selected menu
     const newMenuOptions = Object.keys(menuOptions).reduce(
       (accumulator, currentVal) => ({
         ...accumulator,
@@ -29,6 +30,7 @@ const InnerSidebar = () => {
       }),
       {}
     ) as MenuOptions;
+    console.log(newMenuOptions);
     setMenuOptions(newMenuOptions);
   };
 
