@@ -21,6 +21,7 @@ const InnerSidebar = () => {
     openFilter: false,
   });
 
+  // Properly toggle selected menu option
   const onOpenMenu = (selectedMenu: keyof MenuOptions) => {
     const newMenuOptions = Object.keys(menuOptions).reduce(
       (accumulator, currentVal) => ({
@@ -29,7 +30,6 @@ const InnerSidebar = () => {
       }),
       {}
     ) as MenuOptions;
-    console.log(newMenuOptions);
     setMenuOptions(newMenuOptions);
   };
 
