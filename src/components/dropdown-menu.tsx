@@ -9,10 +9,15 @@ type DropdownMenuProps = {
   onOpenChange: Dispatch<SetStateAction<boolean>> | (() => void);
 };
 
-const DropdownMenu = ({ children, content, open }: DropdownMenuProps) => {
+const DropdownMenu = ({
+  children,
+  content,
+  open,
+  onOpenChange,
+}: DropdownMenuProps) => {
   return (
     <div className="relative">
-      {children}
+      <div onClick={() => console.log("Clicked")}>{children}</div>
       {open && (
         <motion.div
           animate={{ y: 3, animationDelay: "10" }}

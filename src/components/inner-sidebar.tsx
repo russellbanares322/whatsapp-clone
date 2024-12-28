@@ -21,16 +21,11 @@ const InnerSidebar = () => {
     openFilter: false,
   });
 
-  // Properly toggle selected menu option
   const onOpenMenu = (selectedMenu: keyof MenuOptions) => {
-    const newMenuOptions = Object.keys(menuOptions).reduce(
-      (accumulator, currentVal) => ({
-        ...accumulator,
-        [currentVal]: currentVal === selectedMenu,
-      }),
-      {}
-    ) as MenuOptions;
-    setMenuOptions(newMenuOptions);
+    setMenuOptions((prev) => ({
+      ...prev,
+      [selectedMenu]: !prev[selectedMenu],
+    }));
   };
 
   return (
