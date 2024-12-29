@@ -22,6 +22,7 @@ const InnerSidebar = () => {
   });
 
   const onOpenMenu = (selectedMenu: keyof MenuOptions) => {
+    // Implement toggle feature
     setMenuOptions((prev) => ({
       ...prev,
       [selectedMenu]: !prev[selectedMenu],
