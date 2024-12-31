@@ -25,7 +25,8 @@ const InnerSidebar = () => {
     const newMenuOptions = Object.keys(menuOptions).reduce(
       (accumulator, currentVal) => ({
         ...accumulator,
-        [currentVal]: currentVal === selectedMenu,
+        [currentVal]:
+          currentVal === selectedMenu ? !menuOptions[currentVal] : false,
       }),
       {}
     ) as MenuOptions;
