@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ContentWrapper from "@/components/content-wrapper";
 import { Roboto } from "next/font/google";
-// import { SignedIn, SignedOut } from "@clerk/nextjs";
-// import SignUpForm from "@/components/sign-up-form";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import SignUpForm from "@/components/sign-up-form";
 import Providers from "./providers";
 
 const roboto = Roboto({
@@ -21,19 +21,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const Authenticated = SignedIn;
-  // const UnAuthenticated = SignedOut;
+  const Authenticated = SignedIn;
+  const UnAuthenticated = SignedOut;
 
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
         <Providers>
-          {/* <Authenticated> */}
-          <ContentWrapper>{children}</ContentWrapper>
-          {/* </Authenticated> */}
-          {/* <UnAuthenticated> */}
-          {/* <SignUpForm /> */}
-          {/* </UnAuthenticated> */}
+          <Authenticated>
+            <ContentWrapper>{children}</ContentWrapper>
+          </Authenticated>
+          <UnAuthenticated>
+            <SignUpForm />
+          </UnAuthenticated>
         </Providers>
       </body>
     </html>

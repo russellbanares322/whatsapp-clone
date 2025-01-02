@@ -10,7 +10,7 @@ import { HiOutlineArchiveBox } from "react-icons/hi2";
 import { LiaCogSolid } from "react-icons/lia";
 import Link from "next/link";
 import { selectedRoutePath } from "@/constants/routePaths";
-import { UserButton } from "@clerk/nextjs";
+import { useAuth, UserButton } from "@clerk/nextjs";
 
 export enum SelectedTab {
   Chats = "Chats",
@@ -21,6 +21,7 @@ export enum SelectedTab {
 
 const OuterSidebar = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
+  const { isSignedIn } = useAuth();
   const [selectedTab, setSelectedTab] = useState<SelectedTab>(
     SelectedTab.Chats
   );
@@ -161,16 +162,18 @@ const OuterSidebar = () => {
                 <p className="text-sm"> Settings</p>
               </div>
             </button>
-            <button
-              className={twMerge(
-                "hover:bg-active-item ml-1 py-2 pl-2 rounded-md border-none outline-none cursor-default"
-              )}
-            >
-              <div className="flex items-center gap-3">
-                <UserButton />
-                <p className="text-sm"> Profile</p>
-              </div>
-            </button>
+            {isSignedIn && (
+              <button
+                className={twMerge(
+                  "hover:bg-active-item ml-1 py-2 pl-2 rounded-md border-none outline-none cursor-default"
+                )}
+              >
+                <div className="flex items-center gap-3">
+                  <UserButton />
+                  <p className="text-sm"> Profile</p>
+                </div>
+              </button>
+            )}
           </div>
         </div>
       </div>
