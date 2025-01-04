@@ -9,10 +9,15 @@ type DropdownMenuProps = {
   onOpenChange: Dispatch<SetStateAction<boolean>> | (() => void);
 };
 
-const DropdownMenu = ({ children, content, open }: DropdownMenuProps) => {
+const DropdownMenu = ({
+  children,
+  content,
+  open,
+  onOpenChange,
+}: DropdownMenuProps) => {
   return (
-    <div className="relative">
-      <div onClick={() => console.log("Clicked")}>{children}</div>
+    <div>
+      <div>{children}</div>
       {open && (
         <motion.div
           animate={{ y: 3, animationDelay: "10" }}
@@ -20,6 +25,7 @@ const DropdownMenu = ({ children, content, open }: DropdownMenuProps) => {
           className={twMerge(
             "absolute  z-50 bg-whitesmoke shadow-lg p-2 rounded-md"
           )}
+          onBlur={() => onOpenChange(false)}
         >
           {content}
         </motion.div>
