@@ -17,7 +17,9 @@ const DropdownMenu = ({ children, content, open }: DropdownMenuProps) => {
         <motion.div
           animate={{ y: 3, animationDelay: "10" }}
           exit={{ opacity: 0 }}
-          className={twMerge("absolute bg-whitesmoke shadow-lg p-2 rounded-md")}
+          className={twMerge(
+            "absolute  z-50 bg-whitesmoke shadow-lg p-2 rounded-md"
+          )}
         >
           {content}
         </motion.div>
