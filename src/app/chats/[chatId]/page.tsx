@@ -11,7 +11,7 @@ export default async function Page({
       {/* Header */}
       <header className="bg-white h-[65px]">Header</header>
       {/* Content */}
-      <div className="bg-whitesmoke h-[888px]">{`Product ID ${chatId}`}</div>
+      <div className="bg-whitesmoke h-[888px]">{`Chat ID ${chatId}`}</div>
       {/* Chat Input */}
       <div className="bg-white h-[65px]">Chat Inputs</div>
     </div>
