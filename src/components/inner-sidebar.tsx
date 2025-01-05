@@ -14,6 +14,7 @@ type MenuOptions = {
   openFilter: boolean;
 };
 
+// Implement
 const InnerSidebar = () => {
   const [menuOptions, setMenuOptions] = useState<MenuOptions>({
     openAddUser: false,
