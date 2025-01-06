@@ -45,7 +45,11 @@ const InnerSidebar = () => {
             <DropdownMenu
               open={menuOptions.openAddUser}
               onOpenChange={() => onOpenMenu("openAddUser")}
-              content={<div>Add Person</div>}
+              content={
+                <div>
+                  <p className="font-semibold text-base">Add User</p>
+                </div>
+              }
             >
               <GoPersonAdd
                 className="hover:bg-whitesmoke p-2 rounded-md"
@@ -57,7 +61,11 @@ const InnerSidebar = () => {
             <DropdownMenu
               open={menuOptions.openStartNewChat}
               onOpenChange={() => onOpenMenu("openStartNewChat")}
-              content={<div>Start New Chat</div>}
+              content={
+                <div>
+                  <p className="font-semibold text-base">Start New Chat</p>
+                </div>
+              }
             >
               <IoCreateOutline
                 className="hover:bg-whitesmoke p-2 rounded-md"
@@ -69,7 +77,11 @@ const InnerSidebar = () => {
             <DropdownMenu
               open={menuOptions.openFilter}
               onOpenChange={() => onOpenMenu("openFilter")}
-              content={<div>Filter Options</div>}
+              content={
+                <div>
+                  <p className="font-semibold text-base">Filter Options</p>
+                </div>
+              }
             >
               <BsFilter
                 className="hover:bg-whitesmoke p-2 rounded-md"
