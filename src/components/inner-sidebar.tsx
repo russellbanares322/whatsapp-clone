@@ -7,6 +7,7 @@ import SearchInput from "./search-input";
 import ChatCard from "./chat-card";
 import DropdownMenu from "./dropdown-menu";
 import { useState } from "react";
+import AddUserDropdownContent from "./add-user-dropdown-content";
 
 type MenuOptions = {
   openAddUser: boolean;
@@ -43,13 +44,10 @@ const InnerSidebar = () => {
           <div className="flex items-center gap-1">
             {/* Add User */}
             <DropdownMenu
+              className="w-[322px]"
               open={menuOptions.openAddUser}
               onOpenChange={() => onOpenMenu("openAddUser")}
-              content={
-                <div>
-                  <p className="font-semibold text-base">Add User</p>
-                </div>
-              }
+              content={<AddUserDropdownContent />}
             >
               <GoPersonAdd
                 className="hover:bg-whitesmoke p-2 rounded-md"
