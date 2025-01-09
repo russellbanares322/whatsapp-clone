@@ -8,6 +8,7 @@ import ChatCard from "./chat-card";
 import DropdownMenu from "./dropdown-menu";
 import { useState } from "react";
 import AddUserDropdownContent from "./add-user-dropdown-content";
+import StartNewChatDropdownContent from "./start-new-chat-dropdown-content";
 
 type MenuOptions = {
   openAddUser: boolean;
@@ -59,11 +60,7 @@ const InnerSidebar = () => {
             <DropdownMenu
               open={menuOptions.openStartNewChat}
               onOpenChange={() => onOpenMenu("openStartNewChat")}
-              content={
-                <div>
-                  <p className="font-semibold text-base">Start New Chat</p>
-                </div>
-              }
+              content={<StartNewChatDropdownContent />}
             >
               <IoCreateOutline
                 className="hover:bg-whitesmoke p-2 rounded-md"
