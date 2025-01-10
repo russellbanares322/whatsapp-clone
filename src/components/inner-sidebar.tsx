@@ -9,6 +9,7 @@ import DropdownMenu from "./dropdown-menu";
 import { useState } from "react";
 import AddUserDropdownContent from "./add-user-dropdown-content";
 import StartNewChatDropdownContent from "./start-new-chat-dropdown-content";
+import FilterOptionsDropdownContent from "./filter-options-dropdown-content";
 
 type MenuOptions = {
   openAddUser: boolean;
@@ -72,11 +73,7 @@ const InnerSidebar = () => {
             <DropdownMenu
               open={menuOptions.openFilter}
               onOpenChange={() => onOpenMenu("openFilter")}
-              content={
-                <div>
-                  <p className="font-semibold text-base">Filter Options</p>
-                </div>
-              }
+              content={<FilterOptionsDropdownContent />}
             >
               <BsFilter
                 className="hover:bg-whitesmoke p-2 rounded-md"
