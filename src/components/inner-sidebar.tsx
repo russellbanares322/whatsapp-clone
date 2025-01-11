@@ -46,7 +46,7 @@ const InnerSidebar = () => {
           <div className="flex items-center gap-1">
             {/* Add User */}
             <DropdownMenu
-              className="w-[322px]"
+              className="w-full max-w-[322px]"
               open={menuOptions.openAddUser}
               onOpenChange={() => onOpenMenu("openAddUser")}
               content={<AddUserDropdownContent />}
