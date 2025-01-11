@@ -1,7 +1,7 @@
 import React from "react";
 import SearchInput from "./search-input";
 
-const DUMMY_CONTACTS = new Array(3).fill("").map((_) => ({
+const DUMMY_CONTACTS = new Array(3).fill("").map(() => ({
   name: "Test",
   isContactSavedInPhone: true,
 }));
