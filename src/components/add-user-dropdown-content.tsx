@@ -1,6 +1,5 @@
 import React from "react";
 import SearchInput from "./search-input";
-import { p } from "motion/react-client";
 
 const DUMMY_CONTACTS = new Array(3).fill("").map(() => ({
   name: "Test",
