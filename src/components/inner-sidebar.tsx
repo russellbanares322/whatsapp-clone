@@ -59,6 +59,7 @@ const InnerSidebar = () => {
               />
             </DropdownMenu>
             <DropdownMenu
+              className="w-full max-w-[322px]"
               open={menuOptions.openStartNewChat}
               onOpenChange={() => onOpenMenu("openStartNewChat")}
               content={<StartNewChatDropdownContent />}
