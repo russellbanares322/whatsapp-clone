@@ -29,6 +29,7 @@ const DropdownMenu = ({
             className
           )}
           onBlur={() => onOpenChange(false)}
+          onClick={(e) => e.stopPropagation()}
         >
           {content}
         </motion.div>
