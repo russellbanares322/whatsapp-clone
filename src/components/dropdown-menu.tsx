@@ -6,7 +6,7 @@ type DropdownMenuProps = {
   children: React.ReactNode;
   content: React.ReactNode;
   open: boolean;
-  onOpenChange: Dispatch<SetStateAction<boolean>> | (() => void);
+  onOpenChange: () => void;
   className?: string;
 };
 
@@ -28,7 +28,7 @@ const DropdownMenu = ({
             "absolute z-50 bg-whitesmoke shadow-lg p-2 rounded-lg",
             className
           )}
-          onBlur={() => onOpenChange(false)}
+          onBlur={onOpenChange}
           onClick={(e) => e.stopPropagation()}
         >
           {content}

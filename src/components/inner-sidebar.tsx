@@ -17,13 +17,16 @@ type MenuOptions = {
   openFilter: boolean;
 };
 
+const DEFAULT_MENU_OPTIONS = {
+  openAddUser: false,
+  openStartNewChat: false,
+  openFilter: false,
+};
+
 // Implement
 const InnerSidebar = () => {
-  const [menuOptions, setMenuOptions] = useState<MenuOptions>({
-    openAddUser: false,
-    openStartNewChat: false,
-    openFilter: false,
-  });
+  const [menuOptions, setMenuOptions] =
+    useState<MenuOptions>(DEFAULT_MENU_OPTIONS);
 
   const onOpenMenu = (selectedMenu: keyof MenuOptions) => {
     const newMenuOptions = Object.keys(menuOptions).reduce(
@@ -37,6 +40,10 @@ const InnerSidebar = () => {
     setMenuOptions(newMenuOptions);
   };
 
+  const onResetMenuOptions = () => {
+    setMenuOptions(DEFAULT_MENU_OPTIONS);
+  };
+
   return (
     <div className="border-r border-0 border-solid w-[268px]">
       <div className="max-h-[887px] overflow-auto px-[10px] py-[27px]">
@@ -48,7 +55,7 @@ const InnerSidebar = () => {
             <DropdownMenu
               className="w-full max-w-[322px]"
               open={menuOptions.openAddUser}
-              onOpenChange={() => onOpenMenu("openAddUser")}
+              onOpenChange={onResetMenuOptions}
               content={<AddUserDropdownContent />}
             >
               <GoPersonAdd
@@ -61,7 +68,7 @@ const InnerSidebar = () => {
             <DropdownMenu
               className="w-full max-w-[322px]"
               open={menuOptions.openStartNewChat}
-              onOpenChange={() => onOpenMenu("openStartNewChat")}
+              onOpenChange={onResetMenuOptions}
               content={<StartNewChatDropdownContent />}
             >
               <IoCreateOutline
@@ -73,8 +80,9 @@ const InnerSidebar = () => {
             </DropdownMenu>
             <DropdownMenu
               open={menuOptions.openFilter}
-              onOpenChange={() => onOpenMenu("openFilter")}
+              onOpenChange={onResetMenuOptions}
               content={<FilterOptionsDropdownContent />}
+              className="w-full max-w-[322px]"
             >
               <BsFilter
                 className="hover:bg-whitesmoke p-2 rounded-md"
