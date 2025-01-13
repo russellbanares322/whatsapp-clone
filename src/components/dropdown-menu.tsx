@@ -28,8 +28,8 @@ const DropdownMenu = ({
             "absolute z-50 bg-whitesmoke shadow-lg p-2 rounded-lg",
             className
           )}
-          onBlur={onOpenChange}
           onClick={(e) => e.stopPropagation()}
+          onBlur={onOpenChange}
         >
           {content}
         </motion.div>
