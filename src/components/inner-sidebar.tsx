@@ -23,7 +23,6 @@ const DEFAULT_MENU_OPTIONS = {
   openFilter: false,
 };
 
-// Implement
 const InnerSidebar = () => {
   const [menuOptions, setMenuOptions] =
     useState<MenuOptions>(DEFAULT_MENU_OPTIONS);

@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import { twMerge } from "tailwind-merge";
 import { motion } from "motion/react";
 
@@ -28,7 +27,6 @@ const DropdownMenu = ({
             "absolute z-50 bg-whitesmoke shadow-lg p-2 rounded-lg",
             className
           )}
-          onClick={(e) => e.stopPropagation()}
           onBlur={onOpenChange}
         >
           {content}
