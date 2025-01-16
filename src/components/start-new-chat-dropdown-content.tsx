@@ -5,7 +5,6 @@ const DUMMY_CONTACTS = new Array(3).fill("").map(() => ({
   isContactSavedInPhone: true,
 }));
 
-// Fix dropdown menu not closing when being clicked again
 const StartNewChatDropdownContent = () => {
   return (
     <div className="px-2 pb-1">
