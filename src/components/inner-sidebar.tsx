@@ -43,7 +43,6 @@ const InnerSidebar = () => {
     setMenuOptions(DEFAULT_MENU_OPTIONS);
   };
 
-  //Resolve dropdown menu bug
   return (
     <div className="border-r border-0 border-solid w-[268px]">
       <div className="max-h-[887px] overflow-auto px-[10px] py-[27px]">
