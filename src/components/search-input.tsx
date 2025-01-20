@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { LiaSearchSolid } from "react-icons/lia";
 import { twMerge } from "tailwind-merge";
 
@@ -8,11 +8,7 @@ type SearchInputProps = {
 };
 
 const SearchInput = ({ value, onChange }: SearchInputProps) => {
-  const [isInputFocused, setIsInputFocused] = useState(false);
-
-  useEffect(() => {
-    setIsInputFocused(true);
-  }, []);
+  const [isInputFocused, setIsInputFocused] = useState(true);
 
   return (
     <div
@@ -26,7 +22,7 @@ const SearchInput = ({ value, onChange }: SearchInputProps) => {
       <input
         value={value}
         onChange={onChange}
-        autoFocus
+        autoFocus={isInputFocused}
         className="outline-none text-xs w-full mr-4 bg-transparent"
         type="text"
         onFocus={() => setIsInputFocused(true)}

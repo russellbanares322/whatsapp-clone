@@ -13,7 +13,6 @@ const DropdownMenu = ({
   children,
   content,
   open,
-  onOpenChange,
   className,
 }: DropdownMenuProps) => {
   return (
@@ -27,7 +26,6 @@ const DropdownMenu = ({
             "absolute z-50 bg-whitesmoke shadow-lg p-2 rounded-lg",
             className
           )}
-          onBlur={onOpenChange}
         >
           {content}
         </motion.div>
