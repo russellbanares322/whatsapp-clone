@@ -14,10 +14,17 @@ const DropdownMenu = ({
   content,
   open,
   className,
+  onOpenChange,
 }: DropdownMenuProps) => {
+  const onCloseDropdownMenu = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.currentTarget.id === "dropdown-menu-wrapper") {
+      onOpenChange();
+    }
+  };
+
   return (
-    <div>
-      <div>{children}</div>
+    <div onClick={onCloseDropdownMenu} id="dropdown-menu-wrapper">
+      <div onClick={(e) => e.stopPropagation()}>{children}</div>
       {open && (
         <motion.div
           animate={{ y: 3, animationDelay: "10" }}
@@ -26,6 +33,7 @@ const DropdownMenu = ({
             "absolute z-50 bg-whitesmoke shadow-lg p-2 rounded-lg",
             className
           )}
+          onClick={(e) => e.stopPropagation()}
         >
           {content}
         </motion.div>
