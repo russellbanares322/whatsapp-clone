@@ -14,26 +14,20 @@ const DropdownMenu = ({
   content,
   open,
   className,
-  onOpenChange,
 }: DropdownMenuProps) => {
-  const onCloseDropdownMenu = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.currentTarget.id === "dropdown-menu-wrapper") {
-      onOpenChange();
-    }
-  };
-
   return (
-    <div onClick={onCloseDropdownMenu} id="dropdown-menu-wrapper">
-      <div onClick={(e) => e.stopPropagation()}>{children}</div>
+    <div onBlur={(e) => console.log(e)}>
+      <div>{children}</div>
       {open && (
         <motion.div
+          onClick={(e) => e.stopPropagation()}
+          id="dropdown-menu-content"
           animate={{ y: 3, animationDelay: "10" }}
           exit={{ opacity: 0 }}
           className={twMerge(
             "absolute z-50 bg-whitesmoke shadow-lg p-2 rounded-lg",
             className
           )}
-          onClick={(e) => e.stopPropagation()}
         >
           {content}
         </motion.div>
