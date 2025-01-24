@@ -15,6 +15,7 @@ const DropdownMenu = ({
   open,
   className,
 }: DropdownMenuProps) => {
+  //Fix: Implement onBlur method
   return (
     <div onBlur={(e) => console.log(e)}>
       <div>{children}</div>
