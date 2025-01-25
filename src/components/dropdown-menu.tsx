@@ -14,10 +14,10 @@ const DropdownMenu = ({
   content,
   open,
   className,
+  onOpenChange,
 }: DropdownMenuProps) => {
-  //Fix: Implement onBlur method
   return (
-    <div onBlur={(e) => console.log(e)}>
+    <div onBlur={() => onOpenChange()}>
       <div>{children}</div>
       {open && (
         <motion.div
